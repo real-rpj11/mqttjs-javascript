@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,19 +17,70 @@
 
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+    <script src="browserMqtt.js"></script>
+    <script src="index.js"></script>
+
     <div class="col-sm-12">
         <h1>MQTT</h1>
         <div class="form-group container">
-            <div class="row">
-                <input id="pub-input" type="text">
+            <div class="col">
+                <div class="row">
+                    <h3>Publish</h3>
+                </div>
+                <div class="row">
+                    <label for="topic">Topic:</label>
+                    <input id="pub-input" type="text">
+                </div>
+                <div class="row">
+                    <label for="payload">Payload:</label>
+                    <input id="pub-input-payload" type="text">
+                </div>
+                <div class="row">
+                    <button id="pub-button" class="btn btn-primary" value="">Publish</button>
+                </div>
+
             </div>
-            <div class="row">
-                <button id="pub-button" class="btn btn-primary" value="">Publish</button>
-            </div>    
+
+            <div class="col">
+                <div class="row">
+                    <h3>Subscribe</h3>
+                </div>
+                <div class="row">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="sub-input">
+                </div>
+                <div class="row">
+                    <button id="sub-button" class="btn btn-primary" value="">Subscribe</button>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="row">
+                    <h3>Message</h3>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="topicHead">Topic</th>
+                            <th scope="col" id="payloadHead">Payload</th>
+                        </tr>
+                    <tbody id="tbl-body">
+                    </tbody>
+                    </thead>
+                </table>
+
+
+            </div>
+
+
         </div>
     </div>
+    </div>
+
 </body>
-<script src="./browserMqtt.js"></script>
-<script src="./index.js"></script>
+
+
 </html>
